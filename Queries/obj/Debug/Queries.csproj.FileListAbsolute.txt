@@ -1,0 +1,4 @@
+D:\Projects\Queries\Queries\bin\Debug\Querys.exe.config
+D:\Projects\Queries\Queries\obj\Debug\Querys.exe
+D:\Projects\Queries\Queries\obj\Debug\Querys.pdb
+D:\Projects\Queries\Queries\bin\Debug\Queries.exe.config
