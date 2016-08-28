@@ -1,0 +1,16 @@
+﻿/*	010	AVGT	*/
+IF COL_LENGTH('TABLENAME','AVGT') IS NULL BEGIN ALTER TABLE [TABLENAME] ADD [AVGT] FLOAT END
+GO
+IF COL_LENGTH('TABLENAME','AVGT') IS NOT NULL BEGIN UPDATE [TABLENAME] SET [AVGT]=NULL END
+UPDATE e SET e.[AVGT]=f.[AVG] FROM [TABLENAME] e
+JOIN 
+	(	SELECT c.StudentID,c.MaxGRDT,d.AVG 
+		FROM 
+			(	SELECT a.StudentID,CASE WHEN a.MaxGRD-b.MaxGRDT<=2 THEN b.MaxGRDT ELSE 0 END AS  MaxGRDT
+				FROM (SELECT StudentID,MAX(Grade)MaxGRD FROM [AmarPartDB].dbo.TBL_Arziabi GROUP BY StudentID)a
+				FULL JOIN(SELECT StudentID,MAX(Grade)MaxGRDT FROM [AmarPartDB].dbo.TBL_Arziabi WHERE ArzType='Total' GROUP BY StudentID)b
+				ON b.StudentID = a.StudentID
+			) c
+		INNER JOIN (SELECT * FROM [AmarPartDB].dbo.TBL_Arziabi WHERE AVG IS NOT NULL AND AVG>0)d
+		ON c.StudentID = d.StudentID AND c.MaxGRDT=d.Grade
+	)f ON f.StudentID = e.StudentID

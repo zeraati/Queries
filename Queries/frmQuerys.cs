@@ -30,10 +30,10 @@ namespace Querys
             if (txtTitle.Text != "")
             {
                 // title number
-                string strTitleNum = txtTitleNum.Text.PadLeft(2, '0');
+                string strTitleNumber = txtTitleNum.Text.PadLeft(2, '0');
 
                 // save query text
-                File.WriteAllText(strPathQuerys + @"\" + strTitleNum + "-" + txtTitle.Text + ".sql", txtQuery.Text, Encoding.UTF8);
+                File.WriteAllText(strPathQuerys + @"\" + strTitleNumber + "_" + txtTitle.Text + ".sql", txtQuery.Text, Encoding.UTF8);
 
                 //load querys file name
                 loadQuerys();
@@ -156,7 +156,7 @@ namespace Querys
 
         // search
         private void txtSearch_TextChanged(object sender, EventArgs e)
-        {loadQuerys();}
+        { loadQuerys(); }
 
 
 
@@ -166,16 +166,48 @@ namespace Querys
             txtQuery.Text = File.ReadAllText(strPathQuerys + @"\" + lstbxQuerysName.Text + ".sql");
 
             //  query title number
-            txtTitleNum.Text = lstbxQuerysName.Text.Substring(0, lstbxQuerysName.Text.IndexOf('-'));
+            txtTitleNum.Text = lstbxQuerysName.Text.Substring(0, lstbxQuerysName.Text.IndexOf('_'));
 
             // query title
-            txtTitle.Text = lstbxQuerysName.Text.Replace(txtTitleNum.Text + "-", "");
+            txtTitle.Text = lstbxQuerysName.Text.Replace(txtTitleNum.Text + "_", "");
         }
 
         private void lstbxQuerysNameColumn_SelectedIndexChanged(object sender, EventArgs e)
-        {SelectQuery(lstbxQuerysNameColumn);}
+        { SelectQuery(lstbxQuerysNameColumn); }
 
         private void lstbxQuerysNameTable_SelectedIndexChanged(object sender, EventArgs e)
-        {SelectQuery(lstbxQuerysNameTable);}
+        { SelectQuery(lstbxQuerysNameTable); }
+
+        private void btnSetNumbers_Click(object sender, EventArgs e)
+        {
+            // get all path file
+            string[] files = Directory.GetFiles(strPathQuerys, "*.sql");
+
+            List<string> lstOldName = new List<string>();
+            List<string> lstNewName = new List<string>();
+
+            // add file name to lstbx
+            foreach (string file in files)
+                lstOldName.Add(Path.GetFileNameWithoutExtension(file));
+
+
+
+            int intRC = lstOldName.Count;
+
+            for (int i = 0; i < intRC; i++)
+            {
+                int intchar = lstOldName[i].IndexOf("_");
+                string strNewNumber = (i + 1).ToString().PadLeft(2, '0');
+                string strNewName = lstOldName[i].Substring(intchar, lstOldName[i].Length - intchar);
+                lstNewName.Add(strNewNumber + strNewName);
+                string strReplaceOld = strPathQuerys + "\\" + lstOldName[i] + ".sql";
+                string strReplaceNew = strPathQuerys + "\\" + lstNewName[i] + ".sql";
+                File.Move(strReplaceOld, strReplaceNew);
+            }
+
+
+
+
+        }
     }
 }

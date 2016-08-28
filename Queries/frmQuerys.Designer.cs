@@ -42,6 +42,7 @@
             this.Selected = new System.Windows.Forms.ToolStripMenuItem();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.lstbxQuerysNameTable = new System.Windows.Forms.ListBox();
+            this.btnSetNumbers = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,10 +80,10 @@
             // 
             // btnDel
             // 
-            this.btnDel.Location = new System.Drawing.Point(531, 18);
+            this.btnDel.Location = new System.Drawing.Point(618, 18);
             this.btnDel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(297, 34);
+            this.btnDel.Size = new System.Drawing.Size(210, 34);
             this.btnDel.TabIndex = 7;
             this.btnDel.Text = "حذف";
             this.btnDel.UseVisualStyleBackColor = true;
@@ -168,6 +169,18 @@
             this.lstbxQuerysNameTable.TabIndex = 6;
             this.lstbxQuerysNameTable.SelectedIndexChanged += new System.EventHandler(this.lstbxQuerysNameTable_SelectedIndexChanged);
             // 
+            // btnSetNumbers
+            // 
+            this.btnSetNumbers.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnSetNumbers.Location = new System.Drawing.Point(531, 18);
+            this.btnSetNumbers.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSetNumbers.Name = "btnSetNumbers";
+            this.btnSetNumbers.Size = new System.Drawing.Size(81, 34);
+            this.btnSetNumbers.TabIndex = 7;
+            this.btnSetNumbers.Text = "شماره گذاری";
+            this.btnSetNumbers.UseVisualStyleBackColor = true;
+            this.btnSetNumbers.Click += new System.EventHandler(this.btnSetNumbers_Click);
+            // 
             // frmQuerys
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 19F);
@@ -177,6 +190,7 @@
             this.Controls.Add(this.txtTitle);
             this.Controls.Add(this.txtQuery);
             this.Controls.Add(this.txtTitleNum);
+            this.Controls.Add(this.btnSetNumbers);
             this.Controls.Add(this.btnDel);
             this.Controls.Add(this.lstbxQuerysNameTable);
             this.Controls.Add(this.lstbxQuerysNameColumn);
@@ -207,5 +221,6 @@
         private System.Windows.Forms.ToolStripMenuItem Selected;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.ListBox lstbxQuerysNameTable;
+        private System.Windows.Forms.Button btnSetNumbers;
     }
 }

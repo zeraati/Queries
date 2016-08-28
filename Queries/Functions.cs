@@ -1231,10 +1231,9 @@ namespace Querys
         public void saveList(List<string> lst, string Path)
         {
             File.WriteAllText(Path, lst[0]);
+
             for (int i = 1; i < lst.Count; i++)
-            {
-                File.WriteAllText(Path, File.ReadAllText(Path) + "\r\n" + lst[i]);
-            }
+            {File.WriteAllText(Path, File.ReadAllText(Path) + "\r\n" + lst[i]);}
         }
         #endregion
 

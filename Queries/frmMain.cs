@@ -196,10 +196,10 @@ namespace Querys
 
 
             if (cmbQryTyp.Text == "ستون")
-            { lstRpt = RunQry(GetAllSelectedQuery(chlbxQueryFileName, cmbFrstQry.Text), cmbTBName.Text, out lstQuery, out lstSqlError); }
+            { lstRpt = RunQry(GetAllSelectedQuery(cmbFrstQry.Text,chlbxQueryFileName), cmbTBName.Text, out lstQuery, out lstSqlError); }
 
             if (cmbQryTyp.Text == "جدول")
-            { lstRpt = RunQry(GetAllSelectedQuery(chlbxQueryFileName, cmbFrstQry.Text), out lstQuery, out lstSqlError); }
+            { lstRpt = RunQry(GetAllSelectedQuery(cmbFrstQry.Text,chlbxQueryFileName), out lstQuery, out lstSqlError); }
 
 
 
@@ -307,7 +307,7 @@ namespace Querys
         private void btnSave_Click(object sender, EventArgs e)
         {
             // all checked in list
-            List<string> lst = GetAllSelectedQuery(chlbxQueryFileName, cmbFrstQry.Text);
+            List<string> lst = GetAllSelectedQuery(cmbFrstQry.Text, chlbxQueryFileName);
 
             //  save to text file
 
@@ -421,7 +421,7 @@ namespace Querys
 
 
         //  list of all query selected
-        public List<string> GetAllSelectedQuery(CheckedListBox chlstbx, string strFirstQry)
+        public List<string> GetAllSelectedQuery(string strFirstQry, CheckedListBox chlstbxQueries)
         {
 
             //  list checked
@@ -429,10 +429,10 @@ namespace Querys
 
             lstChecked.Add(strFirstQry);
 
-            for (int i = 0; i < chlstbx.Items.Count; i++)
+            for (int i = 0; i < chlstbxQueries.Items.Count; i++)
             {
-                if (chlstbx.GetItemCheckState(i) == CheckState.Checked)
-                { lstChecked.Add(chlstbx.Items[i].ToString()); }
+                if (chlstbxQueries.GetItemCheckState(i) == CheckState.Checked)
+                { lstChecked.Add(chlstbxQueries.Items[i].ToString()); }
             }
 
             return lstChecked;

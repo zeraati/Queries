@@ -1,0 +1,2 @@
+﻿DROP TABLE [TBL_Name]
+SELECT * INTO [TBL_Name] FROM AmarPartDB.dbo.TBL_Level4
