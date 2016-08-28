@@ -1,4 +1,4 @@
-﻿namespace Querys
+﻿namespace Queries
 {
     partial class frmMain
     {
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.btnConnect = new System.Windows.Forms.Button();
             this.txtUser = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
@@ -245,7 +246,7 @@
             this.cmbRoidad.Location = new System.Drawing.Point(408, 61);
             this.cmbRoidad.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbRoidad.Name = "cmbRoidad";
-            this.cmbRoidad.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.cmbRoidad.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmbRoidad.Size = new System.Drawing.Size(267, 28);
             this.cmbRoidad.TabIndex = 23;
             this.cmbRoidad.SelectedIndexChanged += new System.EventHandler(this.cmbRoidad_SelectedIndexChanged);
@@ -514,13 +515,16 @@
             this.Controls.Add(this.cmbDBNames);
             this.Font = new System.Drawing.Font("IRANSans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.mnsTools;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmMain";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "کوئری";
+            this.Text = "Queries";
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.mnsTools.ResumeLayout(false);
             this.mnsTools.PerformLayout();

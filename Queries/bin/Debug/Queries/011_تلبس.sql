@@ -1,0 +1,9 @@
+﻿/*	005	Talabos	*/
+IF COL_LENGTH('TABLENAME','Talabos') IS NULL BEGIN ALTER TABLE [TABLENAME] ADD Talabos NVARCHAR(100) END
+GO
+IF COL_LENGTH('TABLENAME','Talabos') IS NOT NULL BEGIN UPDATE [TABLENAME] SET Talabos=NULL END
+UPDATE a SET a.Talabos='ملبس' FROM [TABLENAME] a
+JOIN  AmarPartDB.dbo.TbL_Talabos b ON b.Student_ID = a.StudentID
+
+
+

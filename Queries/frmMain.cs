@@ -10,13 +10,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using Microsoft.SqlServer.Management.Common;
-using Persia;
-using PersiaSL;
 using System.Text.RegularExpressions;
 using System.Data.SqlClient;
 using System.Diagnostics;
 
-namespace Querys
+namespace Queries
 {
     public partial class frmMain : Form
     {
@@ -25,12 +23,10 @@ namespace Querys
         // table name of table query
         DataTable dtTbNmQrTb = new DataTable();
 
-        Persia.SolarDate dateNow;
-
         string query;
-        string strPathLoginFolder = @"..\Login.pos";
-        string strPathQuerysFolder = @"..\Querys";
-        string strPathRoidadFolder = @"..\Roidad\";
+        string strPathLoginFolder = @"Login.pos";
+        string strPathQueriesFolder = @"Queries\";
+        string strPathRoidadFolder = @"Roidad\";
 
         SqlConnection sqlConnect = new SqlConnection();
 
@@ -174,7 +170,7 @@ namespace Querys
 
         private void tsmiQry_Click(object sender, EventArgs e)
         {
-            frmQuerys frmQuery = new frmQuerys();
+            frmQueries frmQuery = new frmQueries();
             frmQuery.ShowDialog();
             cmbQryTyp_SelectedIndexChanged(null, null);
         }
@@ -196,10 +192,15 @@ namespace Querys
 
 
             if (cmbQryTyp.Text == "ستون")
-            { lstRpt = RunQry(GetAllSelectedQuery(cmbFrstQry.Text,chlbxQueryFileName), cmbTBName.Text, out lstQuery, out lstSqlError); }
+            {
+                lstRpt = RunQry(GetAllSelectedQuery(cmbFrstQry.Text, chlbxQueryFileName), cmbTBName.Text, out lstQuery, out lstSqlError);
+
+                //  remove columns at end
+                Functions.SqlExcutCommand(sqlConnect, "ALTER TABLE [" + cmbTBName.Text + "] DROP COLUMN  MKID,TeacherID,CodePaziresh");
+            }
 
             if (cmbQryTyp.Text == "جدول")
-            { lstRpt = RunQry(GetAllSelectedQuery(cmbFrstQry.Text,chlbxQueryFileName), out lstQuery, out lstSqlError); }
+            { lstRpt = RunQry(GetAllSelectedQuery(cmbFrstQry.Text, chlbxQueryFileName), out lstQuery, out lstSqlError); }
 
 
 
@@ -250,7 +251,7 @@ namespace Querys
             chlbxQueryFileName.Items.Remove(cmbFrstQry.Text);
 
             if (cmbFrstQry.Text != "System.Data.DataRowView")
-            { cmbTBName.Text = Functions.QueryGetTableName(File.ReadAllText(strPathQuerysFolder + @"\" + cmbFrstQry.Text + ".sql")); }
+            { cmbTBName.Text = Functions.QueryGetTableName(File.ReadAllText(strPathQueriesFolder + cmbFrstQry.Text + ".sql")); }
 
             cmbFrstQry.DropDownWidth = DropDownWidth(cmbFrstQry);
         }
@@ -286,7 +287,7 @@ namespace Querys
 
         //  LoadQueryFileName
         private void txtFilterQueryFileName_TextChanged(object sender, EventArgs e)
-        {LoadQueryFileName();}
+        { LoadQueryFileName(); }
 
 
         private void cmbTBName_SelectedIndexChanged(object sender, EventArgs e)
@@ -481,7 +482,7 @@ namespace Querys
                 string strSqlError = "";
 
                 //  text query
-                strQuery = File.ReadAllText(strPathQuerysFolder + @"\" + lstQrysNam[i] + ".sql");
+                strQuery = File.ReadAllText(strPathQueriesFolder + lstQrysNam[i] + ".sql");
 
                 //  change table query
                 strQuery = Functions.SqlQueryChangeTableName(strQuery, strTbName);
@@ -532,7 +533,7 @@ namespace Querys
                 string strSqlError = "";
 
                 //  text query
-                strQuery = File.ReadAllText(strPathQuerysFolder + @"\" + lstQrysNam[i] + ".sql");
+                strQuery = File.ReadAllText(strPathQueriesFolder + lstQrysNam[i] + ".sql");
 
                 //  run query & result
                 if (strQuery.Contains("GO"))
@@ -667,14 +668,14 @@ namespace Querys
         {
             //  list of query file name
             string strFilter = "";// txtFilterQueryFileName.Text;
-            List<string> lstQueryFileName = Functions.DataTableToList(Functions.GetQueryFileName(strPathQuerysFolder + @"\", cmbQryTyp.Text, strFilter));
+            List<string> lstQueryFileName = Functions.DataTableToList(Functions.GetQueryFileName(strPathQueriesFolder, cmbQryTyp.Text, strFilter));
 
             //  set chlbFild source  // load field name
             Functions.CheckedListBoxSource(lstQueryFileName, chlbxQueryFileName);
 
             //  set combobox source
-            cmbFrstQry.DataSource = Functions.DataTableToList(Functions.GetQueryFileName(strPathQuerysFolder + @"\", cmbQryTyp.Text));
-             
+            cmbFrstQry.DataSource = Functions.DataTableToList(Functions.GetQueryFileName(strPathQueriesFolder, cmbQryTyp.Text));
+
         }
 
 

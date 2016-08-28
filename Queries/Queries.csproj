@@ -46,6 +46,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Query.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.SqlServer.Management.Sdk.Sfc, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
@@ -87,11 +90,11 @@
     <Compile Include="Functions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="frmQuerys.cs">
+    <Compile Include="frmQueries.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmQuerys.Designer.cs">
-      <DependentUpon>frmQuerys.cs</DependentUpon>
+    <Compile Include="frmQueries.Designer.cs">
+      <DependentUpon>frmQueries.cs</DependentUpon>
     </Compile>
     <Compile Include="FunctionsSQL.cs" />
     <EmbeddedResource Include="ErrorMsg.resx">
@@ -110,8 +113,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="frmQuerys.resx">
-      <DependentUpon>frmQuerys.cs</DependentUpon>
+    <EmbeddedResource Include="frmQueries.resx">
+      <DependentUpon>frmQueries.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -140,6 +143,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Query.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using Microsoft.SqlServer.Management.Common;
 using Microsoft.SqlServer.Management.Smo;
 
-namespace Querys
+namespace Queries
 {
     class FunctionsSQL
     {

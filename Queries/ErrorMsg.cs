@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Querys
+namespace Queries
 {
     public partial class ErrorMsg : Form
     {

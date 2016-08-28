@@ -4,7 +4,7 @@ using System.Text;
 using System.Security.Cryptography;
 using System.Configuration;
 
-namespace Querys
+namespace Queries
 {
     class CryptorEngine
     {
