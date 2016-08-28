@@ -1,4 +1,4 @@
-﻿namespace Querys
+﻿namespace Queries
 {
     partial class ErrorMsg
     {

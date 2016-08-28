@@ -8,10 +8,10 @@ D:\Projects\Queries\Queries\bin\Debug\Microsoft.SqlServer.SqlEnum.dll
 D:\Projects\Queries\Queries\bin\Debug\Microsoft.SqlServer.Dmf.dll
 D:\Projects\Queries\Queries\bin\Debug\Microsoft.SqlServer.ServiceBrokerEnum.dll
 D:\Projects\Queries\Queries\obj\Debug\Queries.csprojResolveAssemblyReference.cache
-D:\Projects\Queries\Queries\obj\Debug\Querys.ErrorMsg.resources
-D:\Projects\Queries\Queries\obj\Debug\Querys.frmMain.resources
 D:\Projects\Queries\Queries\obj\Debug\Queries.Properties.Resources.resources
-D:\Projects\Queries\Queries\obj\Debug\Querys.frmQuerys.resources
 D:\Projects\Queries\Queries\obj\Debug\Queries.csproj.GenerateResource.Cache
 D:\Projects\Queries\Queries\obj\Debug\Queries.exe
 D:\Projects\Queries\Queries\obj\Debug\Queries.pdb
+D:\Projects\Queries\Queries\obj\Debug\Queries.frmMain.resources
+D:\Projects\Queries\Queries\obj\Debug\Queries.ErrorMsg.resources
+D:\Projects\Queries\Queries\obj\Debug\Queries.frmQueries.resources

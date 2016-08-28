@@ -6,7 +6,7 @@ using System.Data;
 using System.Text;
 using System.Data.SqlClient;
 
-namespace Querys
+namespace Queries
 {
     class Functions
     {
@@ -729,6 +729,26 @@ namespace Querys
 
 
         #region SqlExcutCommand
+
+        public void SqlExcutCommand(SqlConnection sqlConnection, string Query)
+        {
+            SqlCommand cmd = new SqlCommand(Query, sqlConnection);
+            try
+            {
+                // conection timeoute
+                cmd.CommandTimeout = 3600;
+
+                //  open conection
+                if (cmd.Connection.State == ConnectionState.Closed)
+                { cmd.Connection.Open(); }
+
+                // execute query
+                cmd.CommandType = CommandType.Text;
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception) { }
+        }
+
         public string SqlExcutCommand(SqlConnection sqlConnection, string Query, out string strSqlError, string strState = "")
         {
             //  replace new line & tab space

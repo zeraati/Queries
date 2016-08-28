@@ -1,7 +1,0 @@
-﻿ALTER TABLE [TABLENAME] ADD PayehaMoadel FLOAT
-GO
-UPDATE [TABLENAME] SET PayehaMoadel=NULL
-
-UPDATE a SET a.COLUMN=b.COLUMN FROM [TABLENAME] c
-JOIN (SELECT StudentID,Grade Payeh,AVG PayehaMoadel FROM (SELECT * FROM AmarPartDB.dbo.TBL_Arziabi  WHERE AVG IS NOT NULL AND AVG>0)b)d
- ON d.StudentID = c.StudentID
