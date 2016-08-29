@@ -1,4 +1,4 @@
-﻿/*  002  ModelClassic  */ 
+﻿/*  ModelClassic  */ 
 IF COL_LENGTH('TABLENAME','ModelClassic') IS NULL BEGIN ALTER TABLE [TABLENAME] ADD ModelClassic FLOAT END
 GO
 IF COL_LENGTH('TABLENAME','ModelClassic') IS NOT NULL BEGIN UPDATE [TABLENAME] SET ModelClassic=NULL END

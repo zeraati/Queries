@@ -1,4 +1,4 @@
-﻿/*  002  CodePaziresh  */ 
+﻿/*  CodePaziresh  */ 
 IF COL_LENGTH('TABLENAME','CodePaziresh') IS NULL BEGIN ALTER TABLE [TABLENAME] ADD CodePaziresh INT END
 GO
 IF COL_LENGTH('TABLENAME','CodePaziresh') IS NOT NULL BEGIN UPDATE [TABLENAME] SET CodePaziresh=NULL END

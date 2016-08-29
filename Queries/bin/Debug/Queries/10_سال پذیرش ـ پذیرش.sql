@@ -1,4 +1,4 @@
-﻿/*  002  SalePaziresh  */ 
+﻿/*  SalePaziresh  */ 
 IF COL_LENGTH('TABLENAME','SalePaziresh') IS NULL BEGIN ALTER TABLE [TABLENAME] ADD SalePaziresh NVARCHAR(100) END
 GO
 IF COL_LENGTH('TABLENAME','SalePaziresh') IS NOT NULL BEGIN UPDATE [TABLENAME] SET SalePaziresh=NULL END

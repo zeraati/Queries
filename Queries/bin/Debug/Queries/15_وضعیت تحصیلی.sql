@@ -1,4 +1,4 @@
-﻿/*  002  Vaziiat  */ 
+﻿/*  Vaziiat  */ 
 IF OBJECT_ID('t01', 'U') IS NOT NULL BEGIN DROP TABLE t01 END
 IF OBJECT_ID('t02', 'U') IS NOT NULL BEGIN DROP TABLE t02 END
 GO

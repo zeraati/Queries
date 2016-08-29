@@ -1,4 +1,4 @@
-﻿/*  002  ReshtehClassic  */ 
+﻿/*  ReshtehClassic  */ 
 IF COL_LENGTH('TABLENAME','ReshtehClassic') IS NULL BEGIN ALTER TABLE [TABLENAME] ADD ReshtehClassic NVARCHAR(500) END
 GO
 IF COL_LENGTH('TABLENAME','ReshtehClassic') IS NOT NULL BEGIN UPDATE [TABLENAME] SET ReshtehClassic=NULL END

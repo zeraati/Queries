@@ -75,7 +75,7 @@
             this.lstbxQueriesNameColumn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lstbxQueriesNameColumn.Name = "lstbxQueriesNameColumn";
             this.lstbxQueriesNameColumn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lstbxQueriesNameColumn.Size = new System.Drawing.Size(297, 213);
+            this.lstbxQueriesNameColumn.Size = new System.Drawing.Size(297, 498);
             this.lstbxQueriesNameColumn.TabIndex = 6;
             this.lstbxQueriesNameColumn.SelectedIndexChanged += new System.EventHandler(this.lstbxQueriesNameColumn_SelectedIndexChanged);
             // 
@@ -106,7 +106,7 @@
             this.txtQuery.Location = new System.Drawing.Point(20, 60);
             this.txtQuery.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtQuery.Name = "txtQuery";
-            this.txtQuery.Size = new System.Drawing.Size(497, 453);
+            this.txtQuery.Size = new System.Drawing.Size(497, 448);
             this.txtQuery.TabIndex = 9;
             this.txtQuery.Text = "";
             // 
@@ -162,11 +162,11 @@
             // 
             this.lstbxQueriesNameTable.FormattingEnabled = true;
             this.lstbxQueriesNameTable.ItemHeight = 19;
-            this.lstbxQueriesNameTable.Location = new System.Drawing.Point(531, 319);
+            this.lstbxQueriesNameTable.Location = new System.Drawing.Point(20, 516);
             this.lstbxQueriesNameTable.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lstbxQueriesNameTable.Name = "lstbxQueriesNameTable";
             this.lstbxQueriesNameTable.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lstbxQueriesNameTable.Size = new System.Drawing.Size(297, 194);
+            this.lstbxQueriesNameTable.Size = new System.Drawing.Size(497, 80);
             this.lstbxQueriesNameTable.TabIndex = 6;
             this.lstbxQueriesNameTable.SelectedIndexChanged += new System.EventHandler(this.lstbxQueriesNameTable_SelectedIndexChanged);
             // 
@@ -186,7 +186,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(842, 523);
+            this.ClientSize = new System.Drawing.Size(842, 606);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.txtTitle);
             this.Controls.Add(this.txtQuery);
