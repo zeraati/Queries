@@ -575,7 +575,10 @@ namespace Queries
             {
                 for (int j = 0; j < chlbxQueryFileName.Items.Count; j++)
                 {
-                    if (lst[i].ToString()==chlbxQueryFileName.Items[j].ToString())
+                    string strItemText = lst[i].ToString();
+                    string strSelecteItem = chlbxQueryFileName.Items[j].ToString();
+
+                    if (strSelecteItem.Contains(strItemText.Substring(3, strItemText.Length-3))==true)
                     { chlbxQueryFileName.SetItemChecked(j, true); }
                 }
             }
