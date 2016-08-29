@@ -230,7 +230,7 @@ namespace Queries
             if (cmbRoidad.SelectedIndex != 0)
             {
                 List<string> lst = new List<string>();
-                var fileStream = new FileStream(strPathRoidadFolder + @"\" + cmbRoidad.Text + ".txt", FileMode.Open, FileAccess.Read);
+                var fileStream = new FileStream(strPathRoidadFolder + cmbRoidad.Text + ".txt", FileMode.Open, FileAccess.Read);
                 using (var streamReader = new StreamReader(fileStream, Encoding.UTF8))
                 {
                     string line;
@@ -287,7 +287,11 @@ namespace Queries
 
         //  LoadQueryFileName
         private void txtFilterQueryFileName_TextChanged(object sender, EventArgs e)
-        { LoadQueryFileName(); }
+        {
+            LoadQueryFileName2();
+
+
+        }
 
 
         private void cmbTBName_SelectedIndexChanged(object sender, EventArgs e)
@@ -571,7 +575,7 @@ namespace Queries
             {
                 for (int j = 0; j < chlbxQueryFileName.Items.Count; j++)
                 {
-                    if (lst[i].ToString() == chlbxQueryFileName.Items[j].ToString())
+                    if (lst[i].ToString()==chlbxQueryFileName.Items[j].ToString())
                     { chlbxQueryFileName.SetItemChecked(j, true); }
                 }
             }
@@ -660,7 +664,7 @@ namespace Queries
         }
 
         private void btnCopy_Click(object sender, EventArgs e)
-        { Clipboard.SetText(txtQuery.Text); }
+        {if (txtQuery.Text != "") Clipboard.SetText(txtQuery.Text);}
 
 
         //  load query file name
@@ -675,6 +679,29 @@ namespace Queries
 
             //  set combobox source
             cmbFrstQry.DataSource = Functions.DataTableToList(Functions.GetQueryFileName(strPathQueriesFolder, cmbQryTyp.Text));
+
+        }
+
+
+        private void LoadQueryFileName2()
+        {
+
+            //List<string> lst=Functions.GetSelectedItemsText
+
+
+            //  list of query file name
+            string strFilter = txtFilterQueryFileName.Text;
+            List<string> lstQueryFileName = Functions.DataTableToList(Functions.GetQueryFileName(strPathQueriesFolder, cmbQryTyp.Text, strFilter));
+
+
+
+
+            // clear list box
+            chlbxQueryFileName.Items.Clear();
+
+            // set list box source
+            for (int i = 0; i < lstQueryFileName.Count; i++) chlbxQueryFileName.Items.Add(lstQueryFileName[i]);
+
 
         }
 

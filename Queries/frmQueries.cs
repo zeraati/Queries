@@ -163,7 +163,7 @@ namespace Queries
         private void SelectQuery(ListBox lstbxQueriesName)
         {
             //  query text
-            txtQuery.Text = File.ReadAllText(strPathQueries+ lstbxQueriesName.Text + ".sql");
+            txtQuery.Text = File.ReadAllText(strPathQueries + lstbxQueriesName.Text + ".sql");
 
             //  query title number
             txtTitleNum.Text = lstbxQueriesName.Text.Substring(0, lstbxQueriesName.Text.IndexOf('_'));
@@ -201,13 +201,13 @@ namespace Queries
                 string strNewName = lstOldName[i].Substring(intchar, lstOldName[i].Length - intchar);
                 lstNewName.Add(strNewNumber + strNewName);
                 string strReplaceOld = strPathQueries + lstOldName[i] + ".sql";
-                string strReplaceNew = strPathQueries  + lstNewName[i] + ".sql";
+                string strReplaceNew = strPathQueries + lstNewName[i] + ".sql";
                 File.Move(strReplaceOld, strReplaceNew);
             }
 
 
-
-
+            // load querys names
+            loadQueries();
         }
     }
 }

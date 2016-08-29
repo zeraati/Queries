@@ -449,7 +449,7 @@ namespace Queries
 
 
         #region GetSelectedItemsText
-        public List<string> GetSelectedItemsText(ListBox listBox)
+        public List<string> ListBoxGetSelectedItemsText(ListBox listBox)
         {
             int intSelectedIndex = 0;
             string strSelectedText = "";
@@ -471,6 +471,7 @@ namespace Queries
             return lstSelectedItemsText;
         }
         #endregion
+
 
 
         #region ListToString
@@ -552,16 +553,6 @@ namespace Queries
         }
 
         #endregion
-
-
-
-
-
-
-
-
-
-
 
 
 

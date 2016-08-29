@@ -64,9 +64,9 @@
             this.lblTBName = new System.Windows.Forms.Label();
             this.txtTop = new System.Windows.Forms.TextBox();
             this.btnRun = new System.Windows.Forms.Button();
-            this.txtQuery = new System.Windows.Forms.TextBox();
             this.grbSvrConn = new System.Windows.Forms.GroupBox();
             this.btnCopy = new System.Windows.Forms.Button();
+            this.txtQuery = new System.Windows.Forms.TextBox();
             this.mnsTools.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResult)).BeginInit();
             this.grbQry.SuspendLayout();
@@ -228,7 +228,7 @@
             this.chlbxQueryFileName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.chlbxQueryFileName.Name = "chlbxQueryFileName";
             this.chlbxQueryFileName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.chlbxQueryFileName.Size = new System.Drawing.Size(321, 230);
+            this.chlbxQueryFileName.Size = new System.Drawing.Size(321, 207);
             this.chlbxQueryFileName.TabIndex = 18;
             // 
             // dgvResult
@@ -459,17 +459,6 @@
             this.btnRun.UseVisualStyleBackColor = true;
             this.btnRun.Click += new System.EventHandler(this.btnRun_Click);
             // 
-            // txtQuery
-            // 
-            this.txtQuery.Font = new System.Drawing.Font("Tahoma", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.txtQuery.Location = new System.Drawing.Point(262, 92);
-            this.txtQuery.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtQuery.Multiline = true;
-            this.txtQuery.Name = "txtQuery";
-            this.txtQuery.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtQuery.Size = new System.Drawing.Size(574, 56);
-            this.txtQuery.TabIndex = 37;
-            // 
             // grbSvrConn
             // 
             this.grbSvrConn.Controls.Add(this.cmbServer);
@@ -500,6 +489,17 @@
             this.btnCopy.Text = "کپی";
             this.btnCopy.UseVisualStyleBackColor = true;
             this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
+            // 
+            // txtQuery
+            // 
+            this.txtQuery.Font = new System.Drawing.Font("Tahoma", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.txtQuery.Location = new System.Drawing.Point(262, 92);
+            this.txtQuery.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtQuery.Multiline = true;
+            this.txtQuery.Name = "txtQuery";
+            this.txtQuery.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtQuery.Size = new System.Drawing.Size(574, 56);
+            this.txtQuery.TabIndex = 37;
             // 
             // frmMain
             // 
@@ -578,10 +578,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cmbQryTyp;
         private System.Windows.Forms.ListBox lstReport;
-        private System.Windows.Forms.TextBox txtQuery;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCopy;
         private System.Windows.Forms.TextBox txtFilterQueryFileName;
+        private System.Windows.Forms.TextBox txtQuery;
     }
 }
 
