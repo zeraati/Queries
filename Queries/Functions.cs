@@ -1105,8 +1105,9 @@ namespace Queries
             if (strQuery.Contains("INTO ["))
             {
                 intStart = strQuery.ToUpper().IndexOf("INTO [") + 6;
-                intLen = strQuery.ToUpper().IndexOf("] FROM") - intStart;
-                strTableName = strQuery.Substring(intStart, intLen);
+                string strSubQuery = strQuery.Substring(intStart, strQuery.Length - intStart);
+                intLen = strSubQuery.ToUpper().IndexOf("] ");
+                strTableName = strSubQuery.Substring(0, intLen);
             }
 
             // get when contains "ALTER"
