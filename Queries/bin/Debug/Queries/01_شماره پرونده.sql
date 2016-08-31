@@ -1,5 +1,5 @@
-﻿/*	001	StudentID	*/
+﻿/*	StudentID	*/
 IF OBJECT_ID('TABLENAME', 'U') IS NOT NULL BEGIN DROP TABLE [TABLENAME] END
-SELECT top 1 * INTO [TABLENAME] FROM AmarPartDB.dbo.Student
+SELECT * INTO [TABLENAME] FROM AmarPartDB.dbo.Student
 
 

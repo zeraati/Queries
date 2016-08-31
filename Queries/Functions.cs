@@ -1113,8 +1113,9 @@ namespace Queries
             else if (strQuery.Contains("ALTER TABLE ["))
             {
                 intStart = strQuery.ToUpper().IndexOf("ALTER TABLE [") + 13;
-                intLen = strQuery.ToUpper().IndexOf("] ") - intStart;
-                strTableName = strQuery.Substring(intStart, intLen);
+                string strSubQuery = strQuery.Substring(intStart, strQuery.Length - intStart);
+                intLen = strSubQuery.ToUpper().IndexOf("] ");
+                strTableName = strSubQuery.Substring(0, intLen);
             }
 
             // get when contains "DROP TABLE"
